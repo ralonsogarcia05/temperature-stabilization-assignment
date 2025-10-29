@@ -146,4 +146,42 @@ Open four terminals and in each one run:
 
 The book is written is a very conversational style that is both enjoyable and accessible. I think you will enjoy reading it. Give it a try if you have time. If you want just to learn about serialization in network communication then read the Section **7.5 Serialization—How to Pack Data** (https://beej.us/guide/bgnet/html/split-wide/slightly-advanced-techniques.html#serialization). 
 
- 
+![System stabilized](stabilized.png)
+
+## Build Instructions
+
+Compile the programs using the following commands:
+
+```bash
+gcc utils.c tcp_server.c -o server -lm
+gcc utils.c tcp_client.c -o client
+Run Instructions
+Run the programs using five terminal windows or tabs.
+
+Server (Terminal 1):
+
+bash
+Copy code
+./server 100
+Clients (Terminals 2–5):
+
+bash
+Copy code
+./client 1 50
+./client 2 150
+./client 3 250
+./client 4 350
+Alternatively, the clients can be started from one terminal using background execution:
+
+bash
+Copy code
+./client 1 50 & ./client 2 150 & ./client 3 250 & ./client 4 350 &
+yaml
+Copy code
+
+---
+
+### How to fix it
+1. Run:
+   ```bash
+   nano README.md
